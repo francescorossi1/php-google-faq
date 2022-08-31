@@ -60,33 +60,59 @@ $faq_sections = [
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <style>
         a {text-decoration: none;}
-        header a,header a:hover{color: grey;}
+        header a,header a:hover{color: #646368;}
+        ul li{list-style-type: none;}
+        footer{background-color: #F5F5F5;}
+        footer ul{font-size: 12px;}
     </style>
     <title>Document</title>
 </head>
 
 <body>
-    <header class="bg-white">
+    <header class="bg-white position-sticky top-0 left-0 right-0">
         <div class="header-top container-fluid d-flex justify-content-between py-2">
             <div>
                 <img src="https://www.gstatic.com/images/branding/googlelogo/svg/googlelogo_clr_74x24px.svg" class="img-fluid" alt="google logo">
                 <span><a href="#">Privacy e Termini</a></span>
             </div>
             <div>
-                <a href="#"><i class="fa-solid fa-grip"></i></a>
+                <a href="#" class="pe-3"><i class="fa-solid fa-grip"></i></a>
                 <a href="#"><img src="https://lh3.googleusercontent.com/ogw/AOh-ky2wJxuifl52ozhoJREyviKDAsvtKU4GhU7c13RW=s32-c-mo" class="img-fluid rounded-5" alt="google logo"></a>
             </div>
         </div>
-        <div class="header-bottom container-fluid d-flex justify-content-start"></div>
+        <div class="header-bottom container-fluid border-bottom border-1">
+            <ul class="d-flex justify-content-start">
+                <li class="pe-5"><a href="#">Introduzione</a></li>
+                <li class="pe-5"><a href="#">Norme sulla Privacy</a></li>
+                <li class="pe-5"><a href="#">Termini di Servizio</a></li>
+                <li class="pe-5"><a href="#">Tecnologie</a></li>
+                <li class="pe-5"><a href="#">Domande Frequenti</a></li>
+            </ul>
+        </div>
     </header>
-    <?php foreach ($faq_sections as $faq_section) :
+    <main class="container">
+        <?php foreach ($faq_sections as $faq_section) :
         $answer = $faq_section['answer_paragraphs'];
-    ?>
+        ?>
         <h2><?= $faq_section['question'] ?></h2>
         <?php foreach ($answer as $answer_paragraph) : ?>
             <p><?= $answer_paragraph ?></p>
-        <?php endforeach; ?>
-    <?php endforeach; ?>
+            <?php endforeach; ?>
+            <?php endforeach; ?>
+        </main>
+        <footer class="py-2">
+            <div class="container d-flex justify-content-between align-items-center">
+                <ul class="d-flex align-items-center mb-0 ps-0">
+                    <li class="pe-2">Google</li>
+                    <li class="pe-2">Tutto su Google</li>
+                    <li class="pe-2">Privacy</li>
+                    <li class="pe-2">Termini</li>
+                </ul>
+                <select name="language" id="language">
+                    <option value="Italiano">Italiano</option>
+                </select>
+            </div>
+        </footer>
 </body>
 
 </html>
