@@ -56,18 +56,37 @@ $faq_sections = [
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <style>
+        a {text-decoration: none;}
+        header a,header a:hover{color: grey;}
+    </style>
     <title>Document</title>
 </head>
 
 <body>
+    <header class="bg-white">
+        <div class="header-top container-fluid d-flex justify-content-between py-2">
+            <div>
+                <img src="https://www.gstatic.com/images/branding/googlelogo/svg/googlelogo_clr_74x24px.svg" class="img-fluid" alt="google logo">
+                <span><a href="#">Privacy e Termini</a></span>
+            </div>
+            <div>
+                <a href="#"><i class="fa-solid fa-grip"></i></a>
+                <a href="#"><img src="https://lh3.googleusercontent.com/ogw/AOh-ky2wJxuifl52ozhoJREyviKDAsvtKU4GhU7c13RW=s32-c-mo" class="img-fluid rounded-5" alt="google logo"></a>
+            </div>
+        </div>
+        <div class="header-bottom container-fluid d-flex justify-content-start"></div>
+    </header>
     <?php foreach ($faq_sections as $faq_section) :
         $answer = $faq_section['answer_paragraphs'];
     ?>
         <h2><?= $faq_section['question'] ?></h2>
         <?php foreach ($answer as $answer_paragraph) : ?>
             <p><?= $answer_paragraph ?></p>
-        <? endforeach; ?>
-    <? endforeach; ?>
+        <?php endforeach; ?>
+    <?php endforeach; ?>
 </body>
 
 </html>
